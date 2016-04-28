@@ -222,7 +222,7 @@ position: absolute;
 </style>
 <script>
 $(function() {
- 
+
     $( "#pinBahan" ).draggable({
       start: function() {
 
@@ -236,7 +236,7 @@ console.log("left:"+position.left+",top:"+position.top);
 
       }
     });});
-  
+
 function hover(element) {
 $("#eachitem").show();
 	if(element.id=="pinYangon"){
@@ -255,7 +255,7 @@ $("#eachitem").show();
     element.setAttribute('src', 'pin2.png');
 	$("#eachitem").html("Quick Look<br/>Yankin Data....");
 	}
-	
+
 	if(element.id=="pinBahan_01_001"){
     element.setAttribute('src', 'type1-2.png');
 	$("#eachitem").html("Quick Look<br/>Bahan: Center Type 1<br/>Center 1");
@@ -274,7 +274,7 @@ function unhover(element) {
 	$("#eachitem").hide();
 	if(element.id=="pinYangon"){
     element.setAttribute('src', 'pin.png');
-	
+
 	}
 	if(element.id=="pinBahan"){
     element.setAttribute('src', 'pin.png');
@@ -285,7 +285,7 @@ function unhover(element) {
 	if(element.id=="pinYankin"){
     element.setAttribute('src', 'pin.png');
 	}
-	
+
 	if(element.id=="pinBahan_01_001"){
     element.setAttribute('src', 'type1-1.png');
 	}
@@ -344,7 +344,7 @@ function onclickthat(element) {
 		$("#profile").html("State Level: <br/>Yangon Data Showing...");
 		$("#textsubtitle").html("State Level : Yangon");
 		showYangon();
-		
+
 	}
 	if(element=="pinBahan"){
 		document.getElementById("imgBackground").setAttribute('src', '01001Bahan.PNG');
@@ -365,8 +365,8 @@ function onclickthat(element) {
 			$("#textsubtitle").html("Township Level : Yankin");
 		hideYangon();
 	}
-	
-	
+
+
 	console.log(element);
 }
 function resetthis(element){

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Health info directory</title>
+
+  <!-- Bootstrap -->
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <script src="js/jquery-1.12.3.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <style>
+  .collumn-middle{
+    margin-left: 350px;
+  }
+  #imgBackground{
+  	top: 150px;
+    left: 350px;
+  	height: 400px;
+    width: 400px;
+  	border: 3px solid #73AD21;
+  }
+  #profile{
+    float: left;
+  	top: 150px;
+    left: 150px;
+  }
+  #eachitem{
+  	position: absolute;
+  	top: 150px;
+      left: 850px;
+  }
+
+  #pinBahan{
+  	position: absolute;
+  	top: 432px;
+      left: 510px;
+  	height: 20px;
+      width: 20px;
+  	background: url('pin.png');
+  }
+  #divBahan{
+    position: absolute;
+  	top: 422px;
+    left: 505px;
+  	font-size: 0.5em;
+  }
+
+  #pinBahan_01_001{
+  	position: absolute;
+  	top: 432px;
+    left: 510px;
+  	height: 20px;
+    width: 20px;
+  	background: url('pin.png');
+  }
+  #divBahan_01_001{
+    position: absolute;
+  	top: 422px;
+    left: 505px;
+  	font-size: 0.5em;
+  }
+  #pinBahan_02_001{
+  	position: absolute;
+  	top: 432px;
+    left: 630px;
+  	height: 20px;
+    width: 20px;
+  	background: url('pin.png');
+  }
+  #divBahan_02_001{
+  position: absolute;
+  	top: 422px;
+    left: 625px;
+  	font-size: 0.5em;
+  }
+  #pinBahan_03_001{
+  	position: absolute;
+  	top: 352px;
+    left: 510px;
+  	height: 20px;
+    width: 20px;
+  	background: url('pin.png');
+  }
+  #divBahan_03_001{
+    position: absolute;
+  	top: 342px;
+    left: 505px;
+  	font-size: 0.5em;
+  }
+  </style>
+  <script>
+    function hover(element) {
+      $("#eachitem").show();
+    	if(element.id=="pinBahan"){
+        element.setAttribute('src', 'pin2.png');
+    	$("#eachitem").html("Quick Look<br/>Bahan Data....");
+    	}
+
+    	if(element.id=="pinBahan_01_001"){
+        element.setAttribute('src', 'type1-2.png');
+    	$("#eachitem").html("Quick Look<br/>Bahan: Center Type 1<br/>Center 1");
+    	}
+    	if(element.id=="pinBahan_02_001"){
+        element.setAttribute('src', 'type2-2.png');
+    		$("#eachitem").html("Quick Look<br/>Bahan: Center Type 2<br/>Center 1");
+    	}
+    	if(element.id=="pinBahan_03_001"){
+        element.setAttribute('src', 'type3-2.png');
+    		$("#eachitem").html("Quick Look<br/>Bahan: Center Type 3<br/>Center 1");
+    	}
+    }
+    function unhover(element) {
+    	$("#eachitem").html("");
+    	$("#eachitem").hide();
+    	if(element.id=="pinBahan"){
+        element.setAttribute('src', 'pin.png');
+    	}
+    }
+
+    function onclickthat(element) {
+    	if(element=="pinYangon"){
+    		document.getElementById("imgBackground").setAttribute('src', '01000Yangon.PNG');
+    		$("#pinYangon").hide();
+    		$("#divYangon").hide();
+    		$("#profile").html("State Level: <br/>Yangon Data Showing...");
+    		$("#textsubtitle").html("State Level : Yangon");
+    		showYangon();
+
+    	}
+    	if(element=="pinBahan"){
+    		document.getElementById("imgBackground").setAttribute('src', '01001Bahan.PNG');
+    		$("#profile").html("Township Level: <br/>Bahan Data Showing...");
+    		$("#textsubtitle").html("Township Level : Bahan");
+    	}
+    }
+  </script>
+</head>
+<body>
+  <center>
+    <h1>Health info directory</h1>
+  </center>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <a href="townships.html" type="button" class="btn btn-default" aria-label="Left Align">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Back to state
+      </a>
+    </div>
+    <div class="panel-body">
+      <div id="profile">Profile: <br/>Country 	data Showing</div>
+      <div class='collumn-middle'>
+        <img id='imgBackground' src="images/yangon.png"/>
+        <div id="divBahan_01_001">Center Type 1</div>
+        <img id="pinBahan_01_001" src="type1-1.png" onmouseover="hover(this);" onmouseout="unhover(this);" onclick="onclickthat(this.id)"/>
+        <div id="divBahan_02_001">Center Type 2</div>
+        <img id="pinBahan_02_001" src="type2-1.png" onmouseover="hover(this);" onmouseout="unhover(this);" onclick="onclickthat(this.id)"/>
+        <div id="divBahan_03_001">Center Type 3</div>
+        <img id="pinBahan_03_001" src="type3-1.png" onmouseover="hover(this);" onmouseout="unhover(this);" onclick="onclickthat(this.id)"/>
+      </div>
+    </div>
+  </div>
+
+  <div id="eachitem">Quick Lookup</div>
+  <script>$("#eachitem").hide();</script>
+
+</body>
+</html>

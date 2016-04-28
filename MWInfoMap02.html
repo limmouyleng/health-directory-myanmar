@@ -15,12 +15,12 @@ text-align: center;
 text-align: center;
 }
 #imgBackground{
-	position: absolute;
-	top: 150px;
-    left: 350px;
-	height: 400px;
-    width: 400px;
-	border: 3px solid #73AD21;
+  position: absolute;
+  top: 127px;
+  left: inherit;
+  height: 450px;
+  width: 769px;
+  border: 3px solid #73AD21;
 }
 #profile{
 	position: absolute;
@@ -28,20 +28,17 @@ text-align: center;
     left: 150px;
 }
 
-
-
-
 #eachitem{
 	position: absolute;
 	top: 150px;
     left: 850px;
 }
 #pinYangon{
-	position: absolute;
-	top: 380px;
-    left: 535px;
-	height: 20px;
-    width: 20px;
+  position: absolute;
+  top: 368px;
+  left: 376px;
+  height: 30px;
+  width: 30px;
 }
 #divYangon{
 position: absolute;
@@ -226,29 +223,6 @@ position: absolute;
 }
 </style>
 <script>
-$(function() {
- 
-    $( "#pinBahan" ).draggable({
-      start: function() {
-
-      },
-      drag: function() {
-var obj =  $("#pinBahan");
-var position = obj.position();
-console.log("left:"+position.left+",top:"+position.top);
-      },
-      stop: function() {
-
-      }
-    });});
-  
-  $(function() {
-    $( "#profile2" ).dialog({
-		resizable: true,
-      height:100
-	});
-  });
- 
 
 function hover(element) {
 $("#eachitem").show();
@@ -268,7 +242,7 @@ $("#eachitem").show();
     element.setAttribute('src', 'pin2.png');
 	$("#eachitem").html("Quick Look<br/>Yankin Data....");
 	}
-	
+
 	if(element.id=="pinBahan_01_001"){
     element.setAttribute('src', 'type1-2.png');
 	$("#eachitem").html("Quick Look<br/>Bahan: Center Type 1<br/>Center 1");
@@ -287,7 +261,7 @@ function unhover(element) {
 	$("#eachitem").hide();
 	if(element.id=="pinYangon"){
     element.setAttribute('src', 'pin.png');
-	
+
 	}
 	if(element.id=="pinBahan"){
     element.setAttribute('src', 'pin.png');
@@ -298,7 +272,7 @@ function unhover(element) {
 	if(element.id=="pinYankin"){
     element.setAttribute('src', 'pin.png');
 	}
-	
+
 	if(element.id=="pinBahan_01_001"){
     element.setAttribute('src', 'type1-1.png');
 	}
@@ -357,7 +331,7 @@ function onclickthat(element) {
 		$("#profile").html("State Level: <br/>Yangon Data Showing...");
 		$("#textsubtitle").html("State Level : Yangon");
 		showYangon();
-		
+
 	}
 	if(element=="pinBahan"){
 		document.getElementById("imgBackground").setAttribute('src', '01001Bahan.PNG');
@@ -378,8 +352,8 @@ function onclickthat(element) {
 			$("#textsubtitle").html("Township Level : Yankin");
 		hideYangon();
 	}
-	
-	
+
+
 	console.log(element);
 }
 function resetthis(element){
@@ -394,20 +368,25 @@ function resetthis(element){
 </script>
 </head>
 <body>
-<h1 id="texttitle">Mid Wive Info Map</h1>
+<h1 id="texttitle">Health information directory map</h1>
 <h2 id="textsubtitle">Myanmar (National Level)</h2>
-<img id="imgBackground" src="00000Myanmar.PNG"/>
-<div id="divYangon">Yangon</div>
-<img id="pinYangon" src="pin.png" onmouseover="hover(this);" onmouseout="unhover(this);" onclick="onclickthat(this.id)"/>
 
-<div id="divBahan">Bahan</div>
-<img id="pinBahan" src="pin.png" onmouseover="hover(this);" onmouseout="unhover(this);" onclick="onclickthat(this.id)"/>
-<div id="divBahan_01_001">Center Type 1</div>
-<img id="pinBahan_01_001" src="type1-1.png" onmouseover="hover(this);" onmouseout="unhover(this);" onclick="onclickthat(this.id)"/>
-<div id="divBahan_02_001">Center Type 2</div>
-<img id="pinBahan_02_001" src="type2-1.png" onmouseover="hover(this);" onmouseout="unhover(this);" onclick="onclickthat(this.id)"/>
-<div id="divBahan_03_001">Center Type 3</div>
-<img id="pinBahan_03_001" src="type3-1.png" onmouseover="hover(this);" onmouseout="unhover(this);" onclick="onclickthat(this.id)"/>
+<div id='page-yangon'>
+  <img id="imgBackground" src="00000Myanmar.PNG"/>
+  <div id="divYangon">Yangon</div>
+  <img id="pinYangon" src="pin.png" onmouseover="hover(this);" onmouseout="unhover(this);" onclick="onclickthat(this.id)"/>
+</div>
+
+<div id='page-bahan'>
+  <div id="divBahan">Bahan</div>
+  <img id="pinBahan" src="pin.png" onmouseover="hover(this);" onmouseout="unhover(this);" onclick="onclickthat(this.id)"/>
+  <div id="divBahan_01_001">Center Type 1</div>
+  <img id="pinBahan_01_001" src="type1-1.png" onmouseover="hover(this);" onmouseout="unhover(this);" onclick="onclickthat(this.id)"/>
+  <div id="divBahan_02_001">Center Type 2</div>
+  <img id="pinBahan_02_001" src="type2-1.png" onmouseover="hover(this);" onmouseout="unhover(this);" onclick="onclickthat(this.id)"/>
+  <div id="divBahan_03_001">Center Type 3</div>
+  <img id="pinBahan_03_001" src="type3-1.png" onmouseover="hover(this);" onmouseout="unhover(this);" onclick="onclickthat(this.id)"/>
+</div>
 
 <div id="divTamwe">Tamwe</div>
 <img id="pinTamwe" src="pin.png" onmouseover="hover(this);" onmouseout="unhover(this);" onclick="onclickthat(this.id)"/>
@@ -415,9 +394,6 @@ function resetthis(element){
 <img id="pinYankin" src="pin.png" onmouseover="hover(this);" onmouseout="unhover(this);" onclick="onclickthat(this.id)"/>
 <script>hideYangon();</script>
 <script>hideBahanCenter();</script>
-<div id="profile2" title="Profile">
-  <p>Country data Showing</p>
-</div>
 
 
 <div id="profile">Profile: <br/>Country 	data Showing</div>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Health info directory</title>
+
+  <!-- Bootstrap -->
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <script src="js/jquery-1.12.3.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <style>
+  #imgBackground{
+  	top: 150px;
+    left: 350px;
+  	height: 400px;
+    width: 400px;
+  	border: 3px solid #73AD21;
+  }
+  #profile{
+    float: left;
+  	top: 150px;
+    left: 150px;
+  }
+  #eachitem{
+  	position: absolute;
+  	top: 150px;
+    left: 850px;
+  }
+  #pinYangon{
+  	position: absolute;
+  	top: 380px;
+      left: 535px;
+  	height: 20px;
+      width: 20px;
+  }
+  #divYangon{
+    position: absolute;
+  	top: 370px;
+    left: 540px;
+  	font-size: 0.5em;
+  }
+  .collumn-middle{
+    margin-left: 350px;
+  }
+  </style>
+  <script>
+    function hover(element) {
+      $("#eachitem").show();
+    	if(element.id=="pinYangon"){
+        element.setAttribute('src', 'pin2.png');
+      	$("#eachitem").html("Quick  Look<br/>Yangon Data....");
+    	}
+    }
+    function unhover(element) {
+    	$("#eachitem").html("");
+    	$("#eachitem").hide();
+    	if(element.id=="pinYangon"){
+        element.setAttribute('src', 'pin.png');
+    	}
+    }
+  </script>
+</head>
+<body>
+  <center>
+    <h1>Health info directory</h1>
+  </center>
+  <div class="panel panel-default">
+    <div class="panel-heading">State Level</div>
+    <div class="panel-body">
+      <div id="profile">Profile: <br/>Country 	data Showing</div>
+      <div class='collumn-middle'>
+        <img id='imgBackground' src="images/myanmar.png"/>
+        <div id="divYangon">Yangon</div>
+        <img id="pinYangon" src="pin.png" onmouseover="hover(this);" onmouseout="unhover(this);" onclick="location.href='rhc.html'"/>
+      </div>
+    </div>
+  </div>
+  <div id="eachitem">Quick Lookup</div>
+  <script>$("#eachitem").hide();</script>
+</body>
+</html>
